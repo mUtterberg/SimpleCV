@@ -16,14 +16,14 @@ Installing SimpleCV on the Raspberry Pi
 
 ::
 
-	sudo apt-get install ipython python-opencv python-scipy python-numpy python-setuptools python-pip
+	sudo apt-get install ipython python-opencv python-scipy python-numpy python-setuptools python-pip python-svgwrite
 
 4) SimpleCV should now be ready to install. Download SimpleCV from github 
    and install from the source.
 
 ::
 
-	sudo pip install https://github.com/sightmachine/SimpleCV/zipball/master
+	sudo pip install https://github.com/mutterberg/SimpleCV/zipball/master --no-cache-dir
 
 Alternatively, you can install SimpleCV from source.
 
