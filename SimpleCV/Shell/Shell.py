@@ -42,7 +42,7 @@ def shellclear():
     call("clear")
 
 #method to get magic_* methods working in bpython
-def make_magic(method):
+def define_magic(method):
     def wrapper(*args, **kwargs):
         if not args:
             return method('', '')
