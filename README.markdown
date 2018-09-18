@@ -1,5 +1,17 @@
+Forked from Sight Machine.
+
 --------------------------
-# SimpleCV
+# WHAT WORKS FOR ME
+--------------------------
+
+My environment: (keep track of attempts)
+
+* MAC OS (VERSION ##)
+
+* Python 3.6.6 (try with 2.7 first?)
+
+--------------------------
+# SOURCE DOCS (SightMachine/SimpleCV)[https://www.github.com/sightmachine/simplecv]
 --------------------------
 
 [![Build Status](https://travis-ci.org/sightmachine/SimpleCV.png?branch=develop)](https://travis-ci.org/sightmachine/SimpleCV)
