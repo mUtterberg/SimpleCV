@@ -4,11 +4,16 @@ Forked from Sight Machine.
 # WHAT WORKS FOR ME
 --------------------------
 
-My environment: (keep track of attempts)
+My first goal is to get SimpleCV up & running in Python 2.7 on my Raspberry Pi.
 
-* MAC OS (VERSION ##)
+<a id="rasppi-berg"></a>
+#### RASPBERRY PI
 
-* Python 3.6.6 (try with 2.7 first?)
+* [Installation instructions can be found here.](https://github.com/mutterberg/SimpleCV/blob/develop/doc/HOWTO-Install%20on%20RaspberryPi.rst)
+
+My additions to the source doc was to include `sudo apt-get install python-missingpackagename` because it was missing from requirements.txt, as was pygame (which already came with my version of Raspbian). I also needed to include the flag `--no-cache-dir` when I called the install from the SimpleCV repo. It still throws an error, but this setup has gotten me further than any of the previous attempts. I'm going to try installing from my fork instead. The error I need to address is `AttributeError: 'InteractiveShellEmbed' object has no attribute 'define_magic'`, which came with the user warning: `The 'IPython.config' package has been deprecated. You should import from traitlets.config instead`, shim warning: `The top-level 'frontend' package has been deprecated. All its subpackages have been moved to the top 'IPython' level`, and the user warning: `As of IPython 5.0 'PromptManager' config will have no effect and has been replaced by TerminalInteractiveShell.prompts_class`. With these warnings, my current error seems like a dependency issue I can handle in this fork once I find all problematic lines.
+
+
 
 --------------------------
 # SOURCE DOCS (SightMachine/SimpleCV)[https://www.github.com/sightmachine/simplecv]
