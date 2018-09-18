@@ -196,7 +196,7 @@ def run_notebook(mainArgs):
 
 
 def self_update():
-    URL = "https://github.com/sightmachine/SimpleCV/zipball/master"
+    URL = "https://github.com/mutterberg/SimpleCV/zipball/master"
     command = "pip install -U %s" % URL
 
     if os.getuid() == 0:
