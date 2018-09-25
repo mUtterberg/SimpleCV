@@ -1099,7 +1099,11 @@ class Image:
             #from the opencv cookbook
             #http://opencv.willowgarage.com/documentation/python/cookbook.html
             self._bitmap = cv.CreateImageHeader(self._pil.size, cv.IPL_DEPTH_8U, 3)
-            cv.SetData(self._bitmap, self._pil.tostring())
+# 	    cv.SetData(self._bitmap, self._pil.tostring())
+            try:
+		cv.SetData(self._bitmap, self._pil.frombytes())
+	    except:
+		cv.SetData(self._bitmap, self._pil.frombuffer())
             self._colorSpace = ColorSpace.BGR
             cv.CvtColor(self._bitmap, self._bitmap, cv.CV_RGB2BGR)
             #self._bitmap = cv.iplimage(self._bitmap)
