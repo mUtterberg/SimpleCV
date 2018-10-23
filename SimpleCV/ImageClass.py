@@ -979,6 +979,7 @@ class Image:
                 source = imgpth
 
         print type(source)
+	print PIL_ENABLED
 	if (type(source) == tuple):
             w = int(source[0])
             h = int(source[1])
