@@ -1072,14 +1072,16 @@ class Image:
                 self.filename = source
                 try:
                     self._bitmap = cv.LoadImage(self.filename, iscolor=cv.CV_LOAD_IMAGE_COLOR)
-                except:
+# DEBUGGING THIS BLOCK!!!! cv.CreateImageHeader deprecated when cv2.cv was removed.
+		except:
                     self._pil = pil.open(self.filename).convert("RGB")
-                    self._bitmap = cv.cvCreateImageHeader(self._pil.size, cv.IPL_DEPTH_8U, 3)
-                    cv.cvSetData(self._bitmap, self._pil.tostring())
-                    cv.cvCvtColor(self._bitmap, self._bitmap, cv.CV_RGB2BGR)
+#                     self._bitmap = cv.CreateImageHeader(self._pil.size, cv.IPL_DEPTH_8U, 3)
+#                     cv.SetData(self._bitmap, self._pil.tostring())
+#                     cv.CvtColor(self._bitmap, self._bitmap, cv.CV_RGB2BGR)
 
                 #TODO, on IOError fail back to PIL
-                self._colorSpace = ColorSpace.BGR
+		self._colorSpace = ColorSpace.RGB
+#                 self._colorSpace = ColorSpace.BGR
 
 
         elif (type(source) == pg.Surface):
