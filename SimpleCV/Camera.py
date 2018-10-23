@@ -406,14 +406,14 @@ class Camera(FrameSource):
     pygame_buffer = ""
 
 
-    prop_map = {"width": cv.CV_CAP_PROP_FRAME_WIDTH,
-        "height": cv.CV_CAP_PROP_FRAME_HEIGHT,
-        "brightness": cv.CV_CAP_PROP_BRIGHTNESS,
-        "contrast": cv.CV_CAP_PROP_CONTRAST,
-        "saturation": cv.CV_CAP_PROP_SATURATION,
-        "hue": cv.CV_CAP_PROP_HUE,
-        "gain": cv.CV_CAP_PROP_GAIN,
-        "exposure": cv.CV_CAP_PROP_EXPOSURE}
+    prop_map = {"width": cv.CAP_PROP_FRAME_WIDTH,
+        "height": cv.CAP_PROP_FRAME_HEIGHT,
+        "brightness": cv.CAP_PROP_BRIGHTNESS,
+        "contrast": cv.CAP_PROP_CONTRAST,
+        "saturation": cv.CAP_PROP_SATURATION,
+        "hue": cv.CAP_PROP_HUE,
+        "gain": cv.CAP_PROP_GAIN,
+        "exposure": cv.CAP_PROP_EXPOSURE}
     #human readable to CV constant property mapping
 
     def __init__(self, camera_index = -1, prop_set = {}, threaded = True, calibrationfile = ''):
