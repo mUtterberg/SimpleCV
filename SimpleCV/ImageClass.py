@@ -3596,7 +3596,7 @@ class Image:
 
     #this code is based on code that's based on code from
     #http://blog.jozilla.net/2008/06/27/fun-with-python-opencv-and-face-detection/
-    def findHaarFeatures(self, cascade, scale_factor=1.2, min_neighbors=2, use_canny=cv.CV_HAAR_DO_CANNY_PRUNING, min_size=(20,20), max_size=(1000,1000)):
+    def findHaarFeatures(self, cascade, scale_factor=1.2, min_neighbors=2, use_canny=cv.CASCADE_DO_CANNY_PRUNING, min_size=(20,20), max_size=(1000,1000)):
         """
         **SUMMARY**
 
