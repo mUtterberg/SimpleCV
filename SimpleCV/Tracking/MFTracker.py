@@ -159,7 +159,7 @@ def fbtrack(imgI, imgJ, bb, numM=10, numN=10,margin=5,winsize_ncc=10, winsize_lk
     return (newBB, scaleshift)
 
 # This function originally passed method=cv2.cv.CV_TM_CCOEFF_NORMED
-def lktrack(img1, img2, ptsI, nPtsI, winsize_ncc=10, win_size_lk=4, method=5):
+def lktrack(img1, img2, ptsI, nPtsI, winsize_ncc=10, win_size_lk=4, method=cv2.CV_TM_CCOEFF_NORMED):
     """
     **SUMMARY**
     (Dev Zone)
