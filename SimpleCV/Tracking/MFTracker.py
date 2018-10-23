@@ -454,7 +454,7 @@ def euclideanDistance(point1,point2):
     match = ((point1[:,0]-point2[:,0])**2+(point1[:,1]-point2[:,1])**2)**0.5
     return match
 
-def normCrossCorrelation(img1, img2, pt0, pt1, status, winsize, method=cv2.cv.CV_TM_CCOEFF_NORMED):
+def normCrossCorrelation(img1, img2, pt0, pt1, status, winsize, method=5):
     """
     **SUMMARY**
     (Dev Zone)
