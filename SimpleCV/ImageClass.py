@@ -1028,7 +1028,7 @@ class Image:
                 self._colorSpace = ColorSpace.BGR
 
 
-        elif (type(source) == cv.iplimage):
+        elif (type(source) == np.ndarray):
             if (source.nChannels == 1):
                 self._bitmap = cv.CreateImage(cv.GetSize(source), source.depth, 3)
                 cv.Merge(source, source, source, None, self._bitmap)
