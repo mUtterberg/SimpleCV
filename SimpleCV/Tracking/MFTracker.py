@@ -1,8 +1,10 @@
+import logging
 from SimpleCV.base import np, cv, math, time, spsd
 from copy import copy
 try:
     import cv2
 except ImportError:
+    logging.warning('MFTracker.py could not import cv2')
     pass
 
 def mfTracker(img, bb, ts, oldimg, **kwargs):
@@ -156,6 +158,7 @@ def fbtrack(imgI, imgJ, bb, numM=10, numN=10,margin=5,winsize_ncc=10, winsize_lk
     #print newBB, "fbtrack passing newBB"
     return (newBB, scaleshift)
 
+# This function originally passed method=cv2.cv.CV_TM_CCOEFF_NORMED
 def lktrack(img1, img2, ptsI, nPtsI, winsize_ncc=10, win_size_lk=4, method=5):
     """
     **SUMMARY**
@@ -454,6 +457,7 @@ def euclideanDistance(point1,point2):
     match = ((point1[:,0]-point2[:,0])**2+(point1[:,1]-point2[:,1])**2)**0.5
     return match
 
+# This function originally passed method=cv2.cv.CV_TM_CCOEFF_NORMED
 def normCrossCorrelation(img1, img2, pt0, pt1, status, winsize, method=5):
     """
     **SUMMARY**
