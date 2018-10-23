@@ -978,7 +978,8 @@ class Image:
                 imgpth = os.path.join(LAUNCH_PATH, 'sampleimages', source)
                 source = imgpth
 
-        if (type(source) == tuple):
+        print type(source)
+	if (type(source) == tuple):
             w = int(source[0])
             h = int(source[1])
             source = cv.CreateImage((w,h), cv.IPL_DEPTH_8U, 3)
