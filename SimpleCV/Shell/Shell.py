@@ -116,7 +116,7 @@ def setup_ipython():
     try:
         import IPython
         from traitlets.config.loader import Config
-        from IPython.frontend.terminal.embed import InteractiveShellEmbed
+        from IPython.terminal.embed import InteractiveShellEmbed
 
         cfg = Config()
         cfg.PromptManager.in_template = "SimpleCV:\\#> "
