@@ -6,7 +6,6 @@ import numpy as np
 from numpy import int32
 from numpy import uint8
 import cv2
-from pillow import Image as pil
 
 from EXIF import *
 
