@@ -156,7 +156,7 @@ def fbtrack(imgI, imgJ, bb, numM=10, numN=10,margin=5,winsize_ncc=10, winsize_lk
     #print newBB, "fbtrack passing newBB"
     return (newBB, scaleshift)
 
-def lktrack(img1, img2, ptsI, nPtsI, winsize_ncc=10, win_size_lk=4, method=CV_TM_CCOEFF_NORMED):
+def lktrack(img1, img2, ptsI, nPtsI, winsize_ncc=10, win_size_lk=4, method=5):
     """
     **SUMMARY**
     (Dev Zone)
@@ -170,7 +170,7 @@ def lktrack(img1, img2, ptsI, nPtsI, winsize_ncc=10, win_size_lk=4, method=CV_TM
            Format ptsI[0] - x1, ptsI[1] - y1, ptsI[2] - x2, ..
     nPtsI - Number of points to track from the first image
     winsize_ncc - size of the search window at each pyramid level in LK tracker (in int)
-    method - Paramete specifying the comparison method for normalized cross correlation 
+    method - Parameter specifying the comparison method for normalized cross correlation 
              (see http://opencv.itseez.com/modules/imgproc/doc/object_detection.html?highlight=matchtemplate#cv2.matchTemplate)
     
     **RETURNS**
