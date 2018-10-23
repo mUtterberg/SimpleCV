@@ -124,12 +124,12 @@ def setup_ipython():
         #~ cfg.InteractiveShellEmbed.prompt_out="SimpleCV:\\#: "
         scvShell = InteractiveShellEmbed(config=cfg, banner1=banner,
                                          exit_msg=exit_msg)
-        scvShell.define_magic("tutorial", magic_tutorial)
-        scvShell.define_magic("clear", magic_clear)
-        scvShell.define_magic("example", magic_examples)
-        scvShell.define_magic("forums", magic_forums)
-        scvShell.define_magic("walkthrough", magic_walkthrough)
-        scvShell.define_magic("docs", magic_docs)
+        scvShell.make_magic("tutorial", magic_tutorial)
+        scvShell.make_magic("clear", magic_clear)
+        scvShell.make_magic("example", magic_examples)
+        scvShell.make_magic("forums", magic_forums)
+        scvShell.make_magic("walkthrough", magic_walkthrough)
+        scvShell.make_magic("docs", magic_docs)
     except ImportError:
         try:
             from IPython.Shell import IPShellEmbed
