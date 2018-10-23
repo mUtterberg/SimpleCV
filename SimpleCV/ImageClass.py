@@ -982,7 +982,7 @@ class Image:
             h = int(source[1])
             source = cv.CreateImage((w,h), cv.IPL_DEPTH_8U, 3)
             cv.Zero(source)
-        elif (type(source) == cv.cvmat):
+        if (type(source) == cv.mat):
             self._matrix = cv.CreateMat(source.rows, source.cols, cv.CV_8UC3)
             if((source.step/source.cols)==3): #this is just a guess
                 cv.Copy(source, self._matrix, None)
