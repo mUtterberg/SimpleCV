@@ -22,6 +22,7 @@ from subprocess import call
 import platform
 import webbrowser
 import sys
+import logging
 
 from SimpleCV.__init__ import *
 
@@ -212,6 +213,7 @@ def run_shell(shell=None):
 
     for shell in available_shells:
         try:
+            logging.warning(globals()[shell]())
             return globals()[shell]()
         except ImportError:
             pass
