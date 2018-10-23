@@ -2,6 +2,7 @@
 from SimpleCV.base import *
 from SimpleCV.Color import *
 from SimpleCV.LineScan import *
+import numpy as np
 from numpy import int32
 from numpy import uint8
 import cv2
@@ -982,7 +983,7 @@ class Image:
             h = int(source[1])
             source = cv.CreateImage((w,h), cv.IPL_DEPTH_8U, 3)
             cv.Zero(source)
-        if (type(source) == cv.CvMat):
+        if (type(source) == np.ndarray):
             self._matrix = cv.CreateMat(source.rows, source.cols, cv.CV_8UC3)
             if((source.step/source.cols)==3): #this is just a guess
                 cv.Copy(source, self._matrix, None)
