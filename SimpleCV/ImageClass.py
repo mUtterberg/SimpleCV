@@ -1082,7 +1082,15 @@ class Image:
 		except:
 		    print "else-except block"
 		    print pil.open(self.filename).mode
-                    self._pil = pil.open(self.filename).convert("RGB")
+		    print pil.open(self.filename).format
+		    self._pil = pil.open(self.filename)
+		    if self._pil.mode == 'RGB':
+			self._bitmap.width = self._pil.width
+			self._bitmap.height = self._pil.height
+			self._bitmap.size = self._pil.size
+			self._bitmap.depth = 8
+
+#                     self._pil = pil.open(self.filename).convert("RGB")
 #                     self._bitmap = cv.CreateImageHeader(self._pil.size, cv.IPL_DEPTH_8U, 3)
 #                     cv.SetData(self._bitmap, self._pil.tostring())
 #                     cv.CvtColor(self._bitmap, self._bitmap, cv.CV_RGB2BGR)
