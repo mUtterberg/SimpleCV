@@ -1046,13 +1046,11 @@ class Image:
         
             elif webp or source.split('.')[-1] == 'webp':
                 try:
-                    print "webp try block"
 		    if source.__class__.__name__ == 'StringIO':
                       source.seek(0) # set the stringIO to the begining
                     self._pil = pil.open(source)
                     self._bitmap = cv.CreateImageHeader(self._pil.size, cv.IPL_DEPTH_8U, 3)
                 except:
-                    print "webp except block"
 		    try:
                         from webm import decode as webmDecode
                     except ImportError:
@@ -1075,7 +1073,7 @@ class Image:
                 self.filename = source
                 try:
 		    print "else-try block"
-                    self._bitmap = cv.imread(self.filename, CV_LOAD_IMAGE_COLOR)
+                    self._bitmap = cv.imread(self.filename, cv.IMREAD_COLOR)
 # DEBUGGING THIS BLOCK!!!! cv.CreateImageHeader deprecated when cv2.cv was removed.
 		except:
 		    print "else-except block"
@@ -1123,7 +1121,7 @@ class Image:
         if(colorSpace != ColorSpace.UNKNOWN):
             self._colorSpace = colorSpace
 
-	print self._bitmap
+        print self._bitmap
 
         bm = self.getBitmap()
         self.width = bm.width
