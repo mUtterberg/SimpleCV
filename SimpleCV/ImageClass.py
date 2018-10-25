@@ -1885,9 +1885,11 @@ class Image:
 	    t = []
 	    r = []
 	    mat_handler = self.getBitmap()
+	    mat_ind = 0
 	    for h in range(mat_handler.height):
 	        for w in range(mat_handler.width):
-		    r.append(list(mat_hander[h][w]))
+		    r.append(list(mat_hander.data[mat_ind]))
+		    mat_ind += 1
 		t.append(r)
 	    self._matrix = t
 # 	    self._matrix = cv.GetMat(self.getBitmap()) #convert the bitmap to a matrix
