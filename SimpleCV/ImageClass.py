@@ -1090,8 +1090,8 @@ class Image:
                 self.filename = source
                 try:
 		    print "else-try block"
-#                     self._bitmap = cv.imread(self.filename, cv.IMREAD_COLOR)
-                    self._bitmap = cv.imread(self.filename, cv.MANUAL_TRACEBACK)
+                    self._bitmap = cv.imread(self.filename, cv.IMREAD_COLOR)
+#                     self._bitmap = cv.imread(self.filename, cv.MANUAL_TRACEBACK)
 
 		    
 		    
@@ -2063,7 +2063,7 @@ class Image:
         """
 
         if type(self._cv2Numpy) is not np.ndarray:
-            self._cv2Numpy = np.array(self.getMatrix())
+            self._cv2Numpy = np.array(self.getMatrix())[:, :, ::-1].transpose([1, 0, 2])
         return self._cv2Numpy
 
     def getGrayNumpyCv2(self):
@@ -2677,8 +2677,9 @@ class Image:
         :py:meth:`resize`
 
         """
-        w, h = width, height
-        if height == -1:
+#         w, h = width, height
+        w, h = 32, 32
+	if height == -1:
             w = int(self.width * width)
             h = int(self.height * width)
             if( w > MAX_DIMENSION or h > MAX_DIMENSION or h < 1 or w < 1 ):
