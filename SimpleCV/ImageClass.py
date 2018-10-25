@@ -1882,7 +1882,15 @@ class Image:
         if (self._matrix):
             return self._matrix
         else:
-            self._matrix = cv.GetMat(self.getBitmap()) #convert the bitmap to a matrix
+	    t = []
+	    r = []
+	    mat_handler = self.getBitmap()
+	    for h in len(mat_handler.height):
+	        for w in len(mat_handler.width):
+		    r.append(list(mat_hander[h][w]))
+		t.append(r)
+	    self._matrix = t
+# 	    self._matrix = cv.GetMat(self.getBitmap()) #convert the bitmap to a matrix
             return self._matrix
 
 
