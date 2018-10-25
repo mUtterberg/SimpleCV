@@ -3838,7 +3838,7 @@ class Image:
 
         """
         if self.width and self.height:
-            return cv.GetSize(self.getBitmap())
+            return self.getBitmap().size
         else:
             return (0, 0)
 
