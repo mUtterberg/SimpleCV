@@ -1107,6 +1107,7 @@ class Image:
 			self._bitmap.size = self._pil.size
 			self._bitmap.channels = 3
 			self._bitmap.depth = 8
+			self._bitmap.data = list(self._pil.getdata())
 
 #                     self._pil = pil.open(self.filename).convert("RGB")
 #                     self._bitmap = cv.CreateImageHeader(self._pil.size, cv.IPL_DEPTH_8U, 3)
@@ -1140,10 +1141,10 @@ class Image:
             self._pil = source
 	    #from the opencv cookbook
             #http://opencv.willowgarage.com/documentation/python/cookbook.html
-            self._bitmap = Bitmap(size=self._pil.size, width=self._pil.width, height=self._pil.height, depth=8, channels=3)
-	    cv.SetData(self._bitmap, self._pil.tobytes())
-            self._colorSpace = ColorSpace.BGR
-            cv.CvtColor(self._bitmap, self._bitmap, cv.CV_RGB2BGR)
+            self._bitmap = Bitmap(size=self._pil.size, width=self._pil.width, height=self._pil.height, depth=8, channels=3, data=list(self._pil.getdata))
+# 	    cv.SetData(self._bitmap, self._pil.tobytes())
+#             self._colorSpace = ColorSpace.BGR
+#             cv.CvtColor(self._bitmap, self._bitmap, cv.CV_RGB2BGR)
             #self._bitmap = cv.iplimage(self._bitmap)
 
 
