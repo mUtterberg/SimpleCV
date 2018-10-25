@@ -1073,7 +1073,11 @@ class Image:
                 self.filename = source
                 try:
 		    print "else-try block"
-                    self._bitmap = cv.imread(self.filename, cv.IMREAD_COLOR)
+#                     self._bitmap = cv.imread(self.filename, cv.IMREAD_COLOR)
+                    self._bitmap = cv.imread(self.filename, cv.IMREAD_COLOR_TRACEBACK)
+
+		    
+		    
 # DEBUGGING THIS BLOCK!!!! cv.CreateImageHeader deprecated when cv2.cv was removed.
 		except:
 		    print "else-except block"
