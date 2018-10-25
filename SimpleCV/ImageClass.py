@@ -1071,7 +1071,7 @@ class Image:
             else:
                 self.filename = source
                 try:
-                    self._bitmap = cv.LoadImage(self.filename, iscolor=cv.CV_LOAD_IMAGE_COLOR)
+                    self._bitmap = cv.imread(self.filename, CV_LOAD_IMAGE_COLOR)
 # DEBUGGING THIS BLOCK!!!! cv.CreateImageHeader deprecated when cv2.cv was removed.
 		except:
                     self._pil = pil.open(self.filename).convert("RGB")
