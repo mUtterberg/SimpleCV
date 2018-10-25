@@ -1148,7 +1148,6 @@ class Image:
 	    self._bitmap.depth=8
 	    self._bitmap.channels=3
 	    self._bitmap.data=list(self._pil.getdata())
-	    print self._bitmap.data
 # 	    cv.SetData(self._bitmap, self._pil.tobytes())
 #             self._colorSpace = ColorSpace.BGR
 #             cv.CvtColor(self._bitmap, self._bitmap, cv.CV_RGB2BGR)
