@@ -980,6 +980,7 @@ class Image:
 
         print type(source)
 	print PIL_ENABLED
+	print self._bitmap
 	if (type(source) == tuple):
             w = int(source[0])
             h = int(source[1])
@@ -1117,6 +1118,7 @@ class Image:
         if(colorSpace != ColorSpace.UNKNOWN):
             self._colorSpace = colorSpace
 
+	print selt._bitmap
 
         bm = self.getBitmap()
         self.width = bm.width
