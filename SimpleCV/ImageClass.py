@@ -1118,7 +1118,7 @@ class Image:
         if(colorSpace != ColorSpace.UNKNOWN):
             self._colorSpace = colorSpace
 
-	print selt._bitmap
+	print self._bitmap
 
         bm = self.getBitmap()
         self.width = bm.width
