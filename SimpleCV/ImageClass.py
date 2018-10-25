@@ -1107,7 +1107,7 @@ class Image:
 			self._bitmap.size = self._pil.size
 			self._bitmap.channels = 3
 			self._bitmap.depth = 8
-			self._bitmap.data = list(self._pil.getdata(b,g,r))
+			self._bitmap.data = list(self._pil.getdata())
 
 #                     self._pil = pil.open(self.filename).convert("RGB")
 #                     self._bitmap = cv.CreateImageHeader(self._pil.size, cv.IPL_DEPTH_8U, 3)
@@ -1147,7 +1147,7 @@ class Image:
 	    self._bitmap.height=self._pil.height
 	    self._bitmap.depth=8
 	    self._bitmap.channels=3
-	    self._bitmap.data=list(self._pil.getdata(b,g,r))
+	    self._bitmap.data=list(self._pil.getdata())
 	    print self._bitmap.data
 # 	    cv.SetData(self._bitmap, self._pil.tobytes())
 #             self._colorSpace = ColorSpace.BGR
