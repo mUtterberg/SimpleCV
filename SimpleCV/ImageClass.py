@@ -1885,8 +1885,8 @@ class Image:
 	    t = []
 	    r = []
 	    mat_handler = self.getBitmap()
-	    for h in mat_handler.height:
-	        for w in mat_handler.width:
+	    for h in range(mat_handler.height):
+	        for w in range(mat_handler.width):
 		    r.append(list(mat_hander[h][w]))
 		t.append(r)
 	    self._matrix = t
