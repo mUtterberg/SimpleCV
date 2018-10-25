@@ -1888,7 +1888,7 @@ class Image:
 	    mat_ind = 0
 	    for h in range(mat_handler.height):
 	        for w in range(mat_handler.width):
-		    r.append(list(mat_hander.data[mat_ind]))
+		    r.append(list(mat_handler.data[mat_ind]))
 		    mat_ind += 1
 		t.append(r)
 	    self._matrix = t
