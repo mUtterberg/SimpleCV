@@ -1046,12 +1046,14 @@ class Image:
         
             elif webp or source.split('.')[-1] == 'webp':
                 try:
-                    if source.__class__.__name__ == 'StringIO':
+                    print "webp try block"
+		    if source.__class__.__name__ == 'StringIO':
                       source.seek(0) # set the stringIO to the begining
                     self._pil = pil.open(source)
                     self._bitmap = cv.CreateImageHeader(self._pil.size, cv.IPL_DEPTH_8U, 3)
                 except:
-                    try:
+                    print "webp except block"
+		    try:
                         from webm import decode as webmDecode
                     except ImportError:
                         logger.warning('The webm module or latest PIL / PILLOW module needs to be installed to load webp files: https://github.com/sightmachine/python-webm')
@@ -1072,9 +1074,12 @@ class Image:
             else:
                 self.filename = source
                 try:
+		    print "else-try block"
                     self._bitmap = cv.imread(self.filename, CV_LOAD_IMAGE_COLOR)
 # DEBUGGING THIS BLOCK!!!! cv.CreateImageHeader deprecated when cv2.cv was removed.
 		except:
+		    print "else-except block"
+		    print pil.open(self.filename).mode
                     self._pil = pil.open(self.filename).convert("RGB")
 #                     self._bitmap = cv.CreateImageHeader(self._pil.size, cv.IPL_DEPTH_8U, 3)
 #                     cv.SetData(self._bitmap, self._pil.tostring())
