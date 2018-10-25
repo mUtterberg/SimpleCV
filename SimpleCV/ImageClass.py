@@ -20,6 +20,23 @@ import math # math... who does that
 import copy # for deep copy
 #import scipy.stats.mode as spsmode
 
+class Bitmap:
+    """
+    **SUMMARY**
+    
+    This format class is used to replace IPLI to bitmap format structure.
+    Hopefully.
+    """
+
+    width = 0
+    height = 0
+    size = 0
+    channels = 0
+    depth = 0
+    
+    def __init__(self):
+	self.data = []
+
 class ColorSpace:
     """
     **SUMMARY**
@@ -821,7 +838,7 @@ class Image:
 
 
     #these are buffer frames for various operations on the image
-    _bitmap = ""  #the bitmap (iplimage)  representation of the image
+    _bitmap = Bitmap()  #the bitmap (iplimage)  representation of the image - now custom class
     _matrix = ""  #the matrix (cvmat) representation
     _grayMatrix = "" #the gray scale (cvmat) representation -KAS
     _graybitmap = ""  #a reusable 8-bit grayscale bitmap
@@ -1088,6 +1105,7 @@ class Image:
 			self._bitmap.width = self._pil.width
 			self._bitmap.height = self._pil.height
 			self._bitmap.size = self._pil.size
+			self._bitmap.channels = 3
 			self._bitmap.depth = 8
 
 #                     self._pil = pil.open(self.filename).convert("RGB")
